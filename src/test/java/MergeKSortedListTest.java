@@ -39,6 +39,8 @@ public class MergeKSortedListTest {
             result = result.next;
             answer = answer.next;
         }
+
+        return true;
     }
     private ListNode[] makeListWithArray(int[][] lists) {
         if (lists == null || lists.length == 0) {
