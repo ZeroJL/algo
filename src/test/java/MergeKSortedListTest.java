@@ -4,24 +4,48 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class MergeKSortedListTest {
-    private MergeKSortedList solution;
+    private static MergeKSortedList solution;
 
     @BeforeAll
-    public void makeSolution() {
-        this.solution = new MergeKSortedList();
+    public static void makeSolution() {
+        solution = new MergeKSortedList();
     }
     @Test
     public void checkMerge() {
-        ListNode[] input = makeListWithArray(new int[][] {{1,4,5}, {1,3,4}, {2,6}});
+        ListNode[] input = new ListNode[3];
+        input[0] = new ListNode(1);
+        ListNode inputPtr = input[0];
+        inputPtr.next = new ListNode(4);
+        inputPtr = inputPtr.next;
+        inputPtr.next = new ListNode(5);
+
+        input[1] = new ListNode(1);
+        inputPtr = input[1];
+        inputPtr.next = new ListNode(3);
+        inputPtr = inputPtr.next;
+        inputPtr.next = new ListNode(4);
+
+        input[2] = new ListNode(2);
+        inputPtr = input[2];
+        inputPtr.next = new ListNode(6);
+
         ListNode node = new ListNode(1);
-        node.next = new ListNode(1);
-        node.next = new ListNode(2);
-        node.next = new ListNode(3);
-        node.next = new ListNode(4);
-        node.next = new ListNode(4);
-        node.next = new ListNode(5);
-        node.next = new ListNode(6);
-        ListNode result =this.solution.solution(input);
+        inputPtr = node;
+        inputPtr.next = new ListNode(1);
+        inputPtr = inputPtr.next;
+        inputPtr.next = new ListNode(2);
+        inputPtr = inputPtr.next;
+        inputPtr.next = new ListNode(3);
+        inputPtr = inputPtr.next;
+        inputPtr.next = new ListNode(4);
+        inputPtr = inputPtr.next;
+        inputPtr.next = new ListNode(4);
+        inputPtr = inputPtr.next;
+        inputPtr.next = new ListNode(5);
+        inputPtr = inputPtr.next;
+        inputPtr.next = new ListNode(6);
+
+        ListNode result = solution.solution(input);
 
         assertTrue(checkList(result, node));
     }
@@ -41,26 +65,5 @@ public class MergeKSortedListTest {
         }
 
         return true;
-    }
-    private ListNode[] makeListWithArray(int[][] lists) {
-        if (lists == null || lists.length == 0) {
-            return null;
-        }
-
-        if (lists[0] == null || lists[0].length == 0) {
-            return null;
-        }
-
-        ListNode[] result = new ListNode[lists.length];
-        for (int i = 0; i < lists.length; ++i) {
-            ListNode dummy = new ListNode(0);
-            ListNode current = dummy;
-            for (int j = 0; j < lists[0].length; ++j) {
-                current.next = new ListNode(lists[i][j]);
-            }
-            result[i] = dummy.next;
-        }
-
-        return result;
     }
 }
