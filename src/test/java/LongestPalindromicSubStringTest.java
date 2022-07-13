@@ -8,6 +8,6 @@ public class LongestPalindromicSubStringTest {
         String s = "badbad";
         LongestPalindromicSubString longestPalindromicSubString = new LongestPalindromicSubString();
         String result = longestPalindromicSubString.solution(s);
-        Assertions.assertTrue(s.equals(result));
+        Assertions.assertTrue("bab".equals(result));
     }
 }
