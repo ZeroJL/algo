@@ -5,7 +5,7 @@ public class LongestPalindromicSubStringTest {
 
     @Test
     void solutionTest() {
-        String s = "badbad";
+        String s = "babad";
         LongestPalindromicSubString longestPalindromicSubString = new LongestPalindromicSubString();
         String result = longestPalindromicSubString.solution(s);
         Assertions.assertTrue("bab".equals(result));
