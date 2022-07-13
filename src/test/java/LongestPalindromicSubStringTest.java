@@ -10,4 +10,12 @@ public class LongestPalindromicSubStringTest {
         String result = longestPalindromicSubString.solution(s);
         Assertions.assertTrue("bab".equals(result));
     }
+
+    @Test
+    void solutionTest2() {
+        String s = "cbbd";
+        LongestPalindromicSubString longestPalindromicSubString = new LongestPalindromicSubString();
+        String result = longestPalindromicSubString.solution(s);
+        Assertions.assertTrue("bb".equals(result));
+    }
 }
