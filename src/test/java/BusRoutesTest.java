@@ -14,4 +14,16 @@ public class BusRoutesTest {
 
         Assertions.assertEquals(result, 2);
     }
+
+    @Test
+    void solution2() {
+        int[][] routes = {{7, 12}, {4, 5, 15}, {4, 5, 15}, {6}, {15, 19}, {9, 12, 13}};
+        int source = 15;
+        int target = 12;
+
+        BusRoutes busRoutes = new BusRoutes();
+        int result = busRoutes.solution(routes, source, target);
+
+        Assertions.assertEquals(result, -1);
+    }
 }
