@@ -45,10 +45,10 @@ public class WordSearchII {
         }
 
         board[row][col] = '#';
-        int[][] offset = {{-1,0},{1,0},{0,-1},{0,1}};
-        for (int i = 0; i < offset.length; ++i) {
-            int newRow = row + offset[i][0];
-            int newCol = col + offset[i][1];
+        int[][] offsets = {{-1,0},{1,0},{0,-1},{0,1}};
+        for (int[] offset : offsets) {
+            int newRow = row + offset[0];
+            int newCol = col + offset[1];
             if (newRow >= 0 && newRow < board.length && newCol >= 0 && newCol < board[0].length) {
                 if (current.children.containsKey(board[newRow][newCol])) {
                     find(newRow, newCol, current, board, result);
