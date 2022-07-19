@@ -19,9 +19,28 @@ public class WordSearchIITest {
         String[] output = {"eat", "oath"};
         Arrays.sort(output);
 
+        Assertions.assertEquals(output.length, result.size());
 
         for (int i = 0; i < result.size(); ++i) {
-            Assertions.assertEquals(result.get(i), output[i]);
+            Assertions.assertEquals(output[i], result.get(i));
+        }
+    }
+
+    @Test
+    void solution2() {
+        char[][] board = {{'a', 'b'}, {'c', 'd'}};
+        String[] words = {"abcb"};
+
+        WordSearchII wordSearchII = new WordSearchII();
+        List<String> result = wordSearchII.solution(board, words);
+        Collections.sort(result);
+
+        String[] output = {};
+
+        Assertions.assertEquals(output.length, result.size());
+
+        for (int i = 0; i < result.size(); ++i) {
+            Assertions.assertEquals(output[i], result.get(i));
         }
     }
 }
