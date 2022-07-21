@@ -12,4 +12,14 @@ public class MissingNumberTest {
 
         Assertions.assertEquals(2, result);
     }
+
+    @Test
+    void solution2() {
+        int[] nums = {0, 1, 2};
+
+        MissingNumber missingNumber = new MissingNumber();
+        int result = missingNumber.solution(nums);
+
+        Assertions.assertEquals(3, result);
+    }
 }
