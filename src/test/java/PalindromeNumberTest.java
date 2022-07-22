@@ -12,4 +12,14 @@ public class PalindromeNumberTest {
 
         Assertions.assertTrue(result);
     }
+
+    @Test
+    void solution2() {
+        int x = -121;
+
+        PalinDromeNumber palinDromeNumber = new PalinDromeNumber();
+        boolean result = palinDromeNumber.solution(x);
+
+        Assertions.assertFalse(result);
+    }
 }
