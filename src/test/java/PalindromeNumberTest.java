@@ -22,4 +22,14 @@ public class PalindromeNumberTest {
 
         Assertions.assertFalse(result);
     }
+
+    @Test
+    void solution3() {
+        int x = 10;
+
+        PalinDromeNumber palinDromeNumber = new PalinDromeNumber();
+        boolean result = palinDromeNumber.solution(x);
+
+        Assertions.assertFalse(result);
+    }
 }
