@@ -13,4 +13,14 @@ public class SlidingWindowMaximumTest {
 
         Assertions.assertArrayEquals(new int[]{3, 3, 5, 5, 6, 7}, result);
     }
+
+    @Test
+    void solution2() {
+        int[] nums = {1};
+        int k = 1;
+        SlidingWindowMaximum slidingWindowMaximum = new SlidingWindowMaximum();
+        int[] result = slidingWindowMaximum.solution(nums, k);
+
+        Assertions.assertArrayEquals(new int[]{1}, result);
+    }
 }
