@@ -13,12 +13,12 @@ public class SlidingWindowMaximum {
 
         Deque<Integer> queue = new ArrayDeque<>();
         for (int i = 0; i < nums.length; ++i) {
-            if (!queue.isEmpty() && queue.size() > k - 1) {
+            if (!queue.isEmpty() && queue.peek() < i - k + 1) {
                 queue.poll();
             }
 
             while (!queue.isEmpty() && nums[queue.peekLast()] < nums[i]) {
-                queue.poll();
+                queue.pollLast();
             }
 
             queue.add(i);
